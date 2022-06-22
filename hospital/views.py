@@ -9,6 +9,9 @@ from django.db.models import Q
 
 
 # Create your views here.
+def landingpage(request):
+    return render(request,'index.html')
+
 
 def doctorclick(request):
     if request.user.is_authenticated:

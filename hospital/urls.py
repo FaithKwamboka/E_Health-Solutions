@@ -22,9 +22,9 @@ urlpatterns = [
     
     
     path('doctor-appointment', views.doctor_appointment,name='doctor-appointment'),
-path('doctor-view-appointment', views.doctor_view_appointment,name='doctor-view-appointment'),
-path('doctor-delete-appointment',views.doctor_delete_appointment,name='doctor-delete-appointment'),
-path('delete-appointment/<int:pk>', views.delete_appointment,name='delete-appointment'),
+    path('doctor-view-appointment', views.doctor_view_appointment,name='doctor-view-appointment'),
+    path('doctor-delete-appointment',views.doctor_delete_appointment,name='doctor-delete-appointment'),
+    path('delete-appointment/<int:pk>', views.delete_appointment,name='delete-appointment'),
 
     
     
