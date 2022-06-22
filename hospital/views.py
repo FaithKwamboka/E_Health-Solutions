@@ -86,7 +86,7 @@ def doctor_dashboard(request):
 
 @login_required(login_url='doctorlogin')
 @user_passes_test(is_doctor)
-def doctor_patient_view(request):
+def doctor_patient(request):
     mydict={
     'doctor':models.Doctor.objects.get(user_id=request.user.id), #for profile picture of doctor in sidebar
     }
