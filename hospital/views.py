@@ -4,6 +4,9 @@ from django.shortcuts import render,redirect,reverse
 from django.http import HttpResponseRedirect
 from django.contrib.auth.models import Group
 from django.contrib.auth.decorators import login_required,user_passes_test
+from django.db.models import Q
+
+
 
 # Create your views here.
 
@@ -41,7 +44,6 @@ def is_patient(user):
     return user.groups.filter(name='PATIENT').exists()
 
 
-
 def afterlogin(request):
     if is_admin(request.user):
         return redirect('admin-dashboard')
@@ -57,8 +59,6 @@ def afterlogin(request):
             return redirect('patient-dashboard')
         else:
             return render(request,'patient_wait_for_approval.html')
-
-
 
 @login_required(login_url='doctorlogin')
 @user_passes_test(is_doctor)
@@ -83,3 +83,30 @@ def doctor_dashboard(request):
     'doctor':models.Doctor.objects.get(user_id=request.user.id), #for profile picture of doctor in sidebar
     }
     return render(request,'doctor/dashboard.html',context=mydict)
+
+@login_required(login_url='doctorlogin')
+@user_passes_test(is_doctor)
+def doctor_patient_view(request):
+    mydict={
+    'doctor':models.Doctor.objects.get(user_id=request.user.id), #for profile picture of doctor in sidebar
+    }
+    return render(request,'doctor/patient.html',context=mydict)
+
+
+@login_required(login_url='doctorlogin')
+@user_passes_test(is_doctor)
+def doctor_view_patient(request):
+    patients=models.Patient.objects.all().filter(status=True,assignedDoctorId=request.user.id)
+    doctor=models.Doctor.objects.get(user_id=request.user.id) #for profile picture of doctor in sidebar
+    return render(request,'doctor/view_patient.html',{'patients':patients,'doctor':doctor})
+
+
+@login_required(login_url='doctorlogin')
+@user_passes_test(is_doctor)
+def search(request):
+    doctor=models.Doctor.objects.get(user_id=request.user.id) #for profile picture of doctor in sidebar
+    # whatever user write in search box we get in query
+    query = request.GET['query']
+    patients=models.Patient.objects.all().filter(status=True,assignedDoctorId=request.user.id).filter(Q(symptoms__icontains=query)|Q(user__first_name__icontains=query))
+    return render(request,'doctor/view_patient.html',{'patients':patients,'doctor':doctor})
+
