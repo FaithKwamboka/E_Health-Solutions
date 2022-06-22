@@ -56,3 +56,20 @@ footer {
   width: 8cm;
   border-radius: 15px !important;
 }
+.abt{
+  background-color: rgba(0,0,255,1);
+  font-size: 20px;
+  line-height: 50px;
+}
+.img-thumbnail{
+  height: 3.5cm !important;
+  width: 3.5cm !important;
+  border:0px !important;
+}
+.icons{
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  text-align: center;
+  color:rgba(0,0,255,1)
+}
