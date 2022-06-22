@@ -1,11 +1,13 @@
-from django.urls import re_path
-from . import views
+from django.urls import path, include
+from .import views
 
 
-app_name = "hospital" 
 
 
-urlpatterns=[
-    re_path('^$',views.landingpage,name = 'landingpage'),
+urlpatterns = [
+    #  path('',views.home,name='home'),
+     path('account/', include('django.contrib.auth.urls')),
+    
+    
+    
 ]
-
