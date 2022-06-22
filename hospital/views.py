@@ -116,3 +116,55 @@ def doctor_view_discharge_patient(request):
     dischargedpatients=models.PatientDischargeDetails.objects.all().distinct().filter(assignedDoctorName=request.user.first_name)
     doctor=models.Doctor.objects.get(user_id=request.user.id) #for profile picture of doctor in sidebar
     return render(request,'doctor/view_discharge_patient.html',{'dischargedpatients':dischargedpatients,'doctor':doctor})
+
+
+
+@login_required(login_url='doctorlogin')
+@user_passes_test(is_doctor)
+def doctor_appointment(request):
+    doctor=models.Doctor.objects.get(user_id=request.user.id) #for profile picture of doctor in sidebar
+    return render(request,'doctor/appointment.html',{'doctor':doctor})
+
+
+
+@login_required(login_url='doctorlogin')
+@user_passes_test(is_doctor)
+def doctor_view_appointment(request):
+    doctor=models.Doctor.objects.get(user_id=request.user.id) #for profile picture of doctor in sidebar
+    appointments=models.Appointment.objects.all().filter(status=True,doctorId=request.user.id)
+    patientid=[]
+    for a in appointments:
+        patientid.append(a.patientId)
+    patients=models.Patient.objects.all().filter(status=True,user_id__in=patientid)
+    appointments=zip(appointments,patients)
+    return render(request,'doctor/view_appointment.html',{'appointments':appointments,'doctor':doctor})
+
+
+
+@login_required(login_url='doctorlogin')
+@user_passes_test(is_doctor)
+def doctor_delete_appointment(request):
+    doctor=models.Doctor.objects.get(user_id=request.user.id) #for profile picture of doctor in sidebar
+    appointments=models.Appointment.objects.all().filter(status=True,doctorId=request.user.id)
+    patientid=[]
+    for a in appointments:
+        patientid.append(a.patientId)
+    patients=models.Patient.objects.all().filter(status=True,user_id__in=patientid)
+    appointments=zip(appointments,patients)
+    return render(request,'doctor/delete_appointment.html',{'appointments':appointments,'doctor':doctor})
+
+
+
+@login_required(login_url='doctorlogin')
+@user_passes_test(is_doctor)
+def delete_appointment(request,pk):
+    appointment=models.Appointment.objects.get(id=pk)
+    appointment.delete()
+    doctor=models.Doctor.objects.get(user_id=request.user.id) #for profile picture of doctor in sidebar
+    appointments=models.Appointment.objects.all().filter(status=True,doctorId=request.user.id)
+    patientid=[]
+    for a in appointments:
+        patientid.append(a.patientId)
+    patients=models.Patient.objects.all().filter(status=True,user_id__in=patientid)
+    appointments=zip(appointments,patients)
+    return render(request,'doctor/delete_appointment.html',{'appointments':appointments,'doctor':doctor})
