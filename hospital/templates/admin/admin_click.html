@@ -1,0 +1,48 @@
+{%extends '../base.html'%}
+{% load static %}
+{% load bootstrap4 %}
+{% load widget_tweaks %}
+{% block content %}
+
+
+<style>
+
+    .reg-box{
+        border:3px solid rgba(0,0,255,1);
+    }
+
+    .reg-box{
+        background: none;
+    }
+    .btnSubmit{
+        background:#3bbebe;
+        color: #fff;
+    }
+</style>
+<div class="container-fluid landing">
+    <div class="row txt">
+     
+        <div class="col-md-5">
+            <!-- Register view -->
+            <div class="card text-white reg-box mb-3">
+                <div class="card-header" style="background-color:rgba(0,0,255,1);"><h4>Register</h4></div>
+                <div class="card-body" style="color: black;">
+                  <div class="jumbotron" style="margin-bottom:0px;">
+                    <h1 class="display-4" style="text-align:center;">Hello, Admin</h1>
+                    <p class="lead">Welcome to E-Health Solutions.</p>
+                    <hr class="my-4">
+                    <p>You can access various features after Login/SignUp.</p>
+                    <p class="lead">
+                      <a class="btn btn-primary btn-lg" href="/adminsignup" role="button">Register Your Account</a>
+                      <a class="btn btn-primary btn-lg" href="/adminlogin" role="button">Login</a>
+                    </p>
+                  </div>
+                    
+                </div>
+
+        </div>
+        <div class="col-md-3"></div>
+    </div>
+</div>
+
+{% endblock %}
