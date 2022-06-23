@@ -56,6 +56,7 @@ urlpatterns = [
     path('discharge-patient', views.admin_discharge_patient_view,name='discharge-patient'),
     path('discharge-patient/<int:pk>', views.discharge_patient_view,name='discharge-patient'),
 
+
     path('patient-dashboard', views.patient_dashboard_view,name='patient-dashboard'),
     path('patient-appointment', views.patient_appointment_view,name='patient-appointment'),
     path('patient-book-appointment', views.patient_book_appointment_view,name='patient-book-appointment'),
@@ -63,6 +64,7 @@ urlpatterns = [
     path('patient-view-doctor', views.patient_view_doctor_view,name='patient-view-doctor'),
     path('searchdoctor', views.search_doctor_view,name='searchdoctor'),
     path('patient-discharge', views.patient_discharge_view,name='patient-discharge'),
+
   
 
 
@@ -104,4 +106,3 @@ urlpatterns = [
     path('admin-approve-appointment', views.admin_approve_appointment_view,name='admin-approve-appointment'),
     path('approve-appointment/<int:pk>', views.approve_appointment_view,name='approve-appointment'),
     path('reject-appointment/<int:pk>', views.reject_appointment_view,name='reject-appointment'),
-]
