@@ -1,31 +1,11 @@
-{%extends '../base.html'%}
 
-{%include 'patient/patientdashboardcards.html'%}
+{% extends 'patient/patient_base.html' %}
 {% load static %}
-{% load bootstrap4 %}
-{% load widget_tweaks %}
 {% block content %}
 
+{%include 'patient/patientdashboardcards.html'%}
 
-<style>
 
-    .reg-box{
-        border:3px solid rgba(0,0,255,1);
-    }
 
-    .reg-box{
-        background: none;
-    }
-    .btnSubmit{
-        background:#3bbebe;
-        color: #fff;
-    }
-</style>
-<div class="container-fluid landing">
-    <div class="row txt">
-     
-       
-    </div>
-</div>
 
-{% endblock %}
+{% endblock content %}
