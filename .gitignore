@@ -3,5 +3,4 @@ virtual/
 .env
 .vscode/*
 __pycache__/
-migrations/
 \virtual

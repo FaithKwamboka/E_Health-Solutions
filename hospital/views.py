@@ -5,6 +5,7 @@ from django.http import HttpResponseRedirect
 from django.contrib.auth.models import Group
 from django.contrib.auth.decorators import login_required,user_passes_test
 from django.db.models import Q
+from datetime import datetime,timedelta,date
 
 
 
@@ -419,8 +420,8 @@ def discharge_patient_view(request,pk):
         pDD.OtherCharge=int(request.POST['OtherCharge'])
         pDD.total=(int(request.POST['roomCharge'])*int(d))+int(request.POST['doctorFee'])+int(request.POST['medicineCost'])+int(request.POST['OtherCharge'])
         pDD.save()
-        return render(request,'admin/patient_final_bill.html',context=patientDict)
-    return render(request,'admin/patient_generate_bill.html',context=patientDict)
+        return render(request,'admin/dashboard.html',context=patientDict)
+    return render(request,'admin/dashboard.html',context=patientDict)
 
 
 

@@ -6,6 +6,9 @@
   <meta charset="UTF-8">
   <title>E-Health</title>
 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+  integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+  crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -101,7 +104,7 @@
     }
 
     .menu {
-      background: #5bc995;
+      background: rgb(21,158, 222);
       height: 100vh;
       width: 240px;
       position: fixed;
@@ -298,15 +301,15 @@
 
     <!-- nav start -->
     <div class="bs-example">
-      <nav class="navbar navbar-expand-md  navbar-dark fixed-top" style="background:#337AB7;">
-        <a href="/admin-dashboard" class="navbar-brand">E-HEALTH SOLUTIONS</a>
+      <nav class="navbar navbar-expand-md  navbar-dark fixed-top" style="background-color: rgba(0,0,255,1); font-weight: 800; font-size:20px;">
+        <a href="/patient-dashboard" class="navbar-brand">E-Health</a>
         <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
           <div class="navbar-nav" style=" margin-left: 90%;">
 
-            <a href="/logout" class="nav-item nav-link">Logout</a>
+            <a href="/logout" class="nav-item nav-link text-white">Logout</a>
           </div>
         </div>
       </nav>
@@ -324,13 +327,84 @@
     <!-- content end-->
 
     <br><br><br><br>
-    <footer>
-      <p>
-        <a id="ftr" href="https://facebook.com/sumit.luv/" class="fa fa-facebook"></a>
-        <a id="ftr" href="https://api.whatsapp.com/send?phone=919572181024&text=Hello%20Sumit.%0d%0aHow%20are%20you%20%3f%0d%0aI%20came%20from%20your%20website.&source=&data=#" class="fa fa-whatsapp"></a>
-        <a id="ftr" href="https://instagram.com/sumit.luv" class="fa fa-instagram"></a>
-        <a id="ftr" href="https://twitter.com/sumitkumar1503" class="fa fa-twitter"></a>
-      </p>
+    <!-- Footer -->
+<footer class="text-center text-white">
+  <!-- Grid container -->
+  <div class="container p-4">
+      <!-- Section: Social media -->
+      <section class="mb-4">
+          <!-- Facebook -->
+          <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-facebook-f"></i></a>
+          <!-- Twitter -->
+          <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-twitter"></i></a>
+          <!-- Google -->
+          <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-google"></i></a>
+          <!-- Instagram -->
+          <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-instagram"></i></a>
+          <!-- Linkedin -->
+          <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-linkedin-in"></i></a>
+      </section>
+      <!-- Section: Social media -->
+
+      <!-- Section: Form -->
+      <section class="">
+          <form action="">
+              <!--Grid row-->
+              <div class="row d-flex justify-content-center">
+                  <!--Grid column-->
+                  <div class="col-md-5 col-12">
+                      <!-- Email input -->
+                      <div class="form-outline form-white mb-4">
+                          <input type="email" id="form5Example2" class="form-control"
+                              placeholder="Enter your Email" style="height:1.5cm; border-radius:0px;"/>
+                      </div>
+                  </div>
+                  <!--Grid column-->
+
+                  <!--Grid column-->
+                  <div class="col-auto">
+                      <!-- Submit button -->
+                      <button type="submit" class="btn mb-4" style="background-color:rgba(0,0,255,1); color:white;height:1.5cm;width:6cm;margin-left:-18px; border-radius:0px;">
+                          Subscribe
+                      </button>
+                  </div>
+                  <!--Grid column-->
+              </div>
+              <!--Grid row-->
+          </form>
+      </section>
+      <!-- Section: Form -->
+
+      <!-- Section: Text -->
+      <section class="mb-4">
+          <div class="row">
+              <div class="col-lg-6 col-md-6 mb-4 mb-md-0">
+                  <p>
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt distinctio earum
+                      repellat quaerat voluptatibus placeat nam, commodi optio pariatur est quia magnam
+                      eum harum corrupti dicta, aliquam sequi voluptate quas.
+                  </p>
+              </div>
+              <div class="col-lg-6 col-md-6 mb-4 mb-md-0">
+                  <p>
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt distinctio earum
+                      repellat quaerat voluptatibus placeat nam, commodi optio pariatur est quia magnam
+                      eum harum corrupti dicta, aliquam sequi voluptate quas.
+                  </p>
+              </div>
+          </div>
+      </section>
+      <!-- Section: Text -->
+  </div>
+  <!-- Grid container -->
+
+  <!-- Copyright -->
+  <div class="text-center p-3">
+         © 2022 Copyright:
+         <a class=" text-white" href="/">E-Care Health Solutions</a>
+  </div>
+  <!-- Copyright -->
+</footer>
 
      
   </main>

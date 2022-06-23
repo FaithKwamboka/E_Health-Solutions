@@ -50,7 +50,7 @@
                 {% for d in doctors %}
                 <tr>
           
-                  
+                  <td>{{d.user}}</td>
                   <td> <img src="{% static d.profile_pic.url %}" alt="Profile Pic" height="40px" width="40px" /></td>
                   <td>{{d.mobile}}</td>
                   <td>{{d.address}}</td>

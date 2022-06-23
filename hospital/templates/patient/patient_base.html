@@ -5,7 +5,9 @@
 <head>
   <meta charset="UTF-8">
   <title> E-Health </title>
-
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+  integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+  crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -104,7 +106,7 @@
     }
 
     .menu {
-      background: #5bc995;
+      background: rgb(21,158, 222);
       height: 100vh;
       width: 240px;
       position: fixed;
@@ -278,7 +280,7 @@
 
 <body>
   <!-- partial:index.partial.html -->
-  <nav class="menu mt-4" tabindex="0">
+  <nav class="menu mt-4" tabindex="0" >
     <div class="smartphone-menu-trigger"></div>
     <header class="avatar">
       <img src="{% static patient.profile_pic.url %}" alt="Profile Pic" />
@@ -297,15 +299,15 @@
   <main>
     <!-- nav start -->
     <div class="bs-example">
-      <nav class="navbar navbar-expand-md  navbar-dark fixed-top" style="background:#337AB7;">
-        <a href="/patient-dashboard" class="navbar-brand">HOSPITAL MANAGEMENT</a>
+      <nav class="navbar navbar-expand-md  navbar-dark fixed-top" style="background-color: rgba(0,0,255,1); font-weight: 800; font-size:20px;">
+        <a href="/patient-dashboard" class="navbar-brand">E-Health</a>
         <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
           <div class="navbar-nav" style=" margin-left: 90%;">
 
-            <a href="/logout" class="nav-item nav-link">Logout</a>
+            <a href="/logout" class="nav-item nav-link text-white">Logout</a>
           </div>
         </div>
       </nav>
@@ -322,24 +324,8 @@
     
     <!-- content end-->
     <br><br><br><br><br><br><br>
-    <footer>
-      <p>
-        <a id="ftr" href="#" class="fa fa-facebook"></a>
-        <a id="ftr" href="#" class="fa fa-whatsapp"></a>
-        <a id="ftr" href="#" class="fa fa-instagram"></a>
-        <a id="ftr" href="#" class="fa fa-twitter"></a>
-      </p>
-      <br>
-      <div class="container">
-        <div class="row">
-            <div class="col-md-12 col-sm-12">
-                <div style="color:#ffffff;" class="wow fadeInUp footer-copyright">
-                    Copyright &copy; 2022 E-Health </p>
-                </div>
-              </div>
-        </div>
-      </div>
-    </footer>
+   <!-- Footer -->
+   {% include "../footer.html" %}
   </main>
 
 
