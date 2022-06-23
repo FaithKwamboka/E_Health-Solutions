@@ -6,12 +6,15 @@ urlpatterns = [
     path('', views.landingpage, name='landingpage'),
     path('doctorclick', views.doctorclick),
     path('patientclick', views.patientclick),
+    path('adminclick', views.adminclick),
     
     path('doctorsignup', views.doctor_signup,name='doctor/signup'),
     path('patientsignup', views.patient_signup_view),
+    path('adminsignup', views.admin_signup_view),
     
     path('doctorlogin', LoginView.as_view(template_name='doctor/login.html')),
     path('patientlogin', LoginView.as_view(template_name='patient/patientlogin.html')),
+    path('adminlogin', LoginView.as_view(template_name='admin/admin_login.html')),
     
     path('afterlogin', views.afterlogin,name='afterlogin'),
     path('logout', LogoutView.as_view(template_name='index.html'),name='logout'),

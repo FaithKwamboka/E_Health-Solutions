@@ -1,0 +1,72 @@
+{%extends '../base.html'%}
+{% load static %}
+{% load bootstrap4 %}
+{% load widget_tweaks %}
+{% block content %}
+
+
+<style>
+
+    .reg-box{
+        border:3px solid rgba(0,0,255,1);
+    }
+
+    .reg-box{
+        background: none;
+    }
+    .btnSubmit{
+        background:#3bbebe;
+        color: #fff;
+    }
+</style>
+<div class="container-fluid landing">
+    <div class="row txt">
+     
+        <div class="col-md-5">
+            <!-- Register view -->
+            <div class="card text-white reg-box mb-3">
+                <div class="card-header" style="background-color:rgba(0,0,255,1);"><h4>Register</h4></div>
+                <div class="card-body">
+                
+  <form method="post">
+    {% csrf_token %}
+    <div class="container register-form">
+      <div class="form">
+        <div class="note">
+          <p>Admin Login Page</p>
+        </div>
+
+        <div class="form-content">
+          <div class="row">
+            <div class="col-md-6">
+
+              <div class="form-group">
+                {% render_field form.username class="form-control" placeholder="Username" %}
+              </div>
+
+            </div>
+            <div class="col-md-6">
+
+              <div class="form-group">
+                {% render_field form.password class="form-control" placeholder="Password" %}
+              </div>
+
+            </div>
+          </div>
+          <button type="submit" class="btnSubmit">Login</button>
+          <div class="text-center">Do not have account? <a href="adminsignup">Signup here</a></div>
+        </div>
+      </div>
+    </div>
+
+  </form>
+
+                    
+                </div>
+
+        </div>
+        <div class="col-md-3"></div>
+    </div>
+</div>
+
+{% endblock %}
