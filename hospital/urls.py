@@ -3,7 +3,7 @@ from . import views
 from django.contrib.auth.views import LoginView,LogoutView
 
 urlpatterns = [
-    # path('', views.index, name='index'),
+    path('', views.landingpage, name='index'),
     path('doctorclick', views.doctorclick),
     
     path('doctorsignup', views.doctor_signup,name='doctor/signup'),
