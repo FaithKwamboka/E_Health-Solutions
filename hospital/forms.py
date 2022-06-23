@@ -29,7 +29,7 @@ class DoctorForm(forms.ModelForm):
 
 
 
-#for teacher related form
+
 class PatientUserForm(forms.ModelForm):
     class Meta:
         model=User

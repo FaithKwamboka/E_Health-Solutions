@@ -11,7 +11,7 @@
         border:3px solid rgba(0,0,255,1);
     }
 
-    .reg-box{
+    .jumbotron{
         background: none;
     }
     .btnSubmit{
@@ -21,28 +21,20 @@
 </style>
 <div class="container-fluid landing">
     <div class="row txt">
-     
-        <div class="col-md-5">
-            <!-- Register view -->
-            <div class="card text-white reg-box mb-3">
-                <div class="card-header" style="background-color:rgba(0,0,255,1);"><h4>Register</h4></div>
-                <div class="card-body">
-                  <div class="jumbotron" style="margin-bottom:0px;">
-                    <h1 class="display-4" style="text-align:center;">Hello, Patient</h1>
-                    <p class="lead">Welcome to Hospital Management System.</p>
-                    <hr class="my-4">
-                    <p>You can access various features after Login/SignUp.</p>
-                    <p class="lead">
-                      <a class="btn btn-primary btn-lg" href="/patientsignup" role="button">Register Your Account</a>
-                      <a class="btn btn-primary btn-lg" href="/patientlogin" role="button">Login</a>
-                    </p>
-                  </div>
-                    
-                </div>
 
-        </div>
-        <div class="col-md-3"></div>
-    </div>
+
+        <div class="jumbotron" style="margin-bottom:0px;">
+            <h1 class="display-4" style="text-align:center;">Hello, Patient</h1>
+            <p class="lead">Welcome to Hospital Management System.</p>
+            
+            <p>You can access various features after Login/SignUp.</p>
+            <p class="lead">
+                <a class="btn btn-primary btn-lg" href="/patientsignup" role="button">Register Your Account</a>
+                <a class="btn btn-primary btn-lg" href="/patientlogin" role="button">Login</a>
+              </p>
+          </div>
+     
+     
 </div>
 
 {% endblock %}
