@@ -96,18 +96,19 @@ def is_patient(user):
 def afterlogin(request):
     if is_admin(request.user):
         return redirect('admin-dashboard')
+    
     elif is_doctor(request.user):
         accountapproval=models.Doctor.objects.all().filter(user_id=request.user.id,status=True)
         if accountapproval:
             return redirect('doctor-dashboard')
         else:
-            return render(request,'doctor_wait_for_approval.html')
+            return render(request,'doctor/approval.html')
     elif is_patient(request.user):
         accountapproval=models.Patient.objects.all().filter(user_id=request.user.id,status=True)
         if accountapproval:
             return redirect('patient-dashboard')
         else:
-            return render(request,'patient_wait_for_approval.html')
+            return render(request,'patient/patient_wait_for_approval.html')
 
 @login_required(login_url='doctorlogin')
 @user_passes_test(is_doctor)
@@ -227,7 +228,7 @@ def admin_add_doctor_view(request):
 def admin_approve_doctor_view(request):
     #those whose approval are needed
     doctors=models.Doctor.objects.all().filter(status=False)
-    return render(request,'hospital/approve_doctor.html',{'doctors':doctors})
+    return render(request,'admin/approve_doctor.html',{'doctors':doctors})
 
 
 @login_required(login_url='adminlogin')
@@ -261,7 +262,7 @@ def admin_view_doctor_specialisation_view(request):
 @login_required(login_url='adminlogin')
 @user_passes_test(is_admin)
 def admin_patient_view(request):
-    return render(request,'hospital/patient.html')
+    return render(request,'admin/patient.html')
 
 
 
@@ -493,7 +494,7 @@ def reject_appointment_view(request,pk):
 
 @login_required(login_url='doctorlogin')
 @user_passes_test(is_doctor)
-def doctor_dashboard_view(request):
+def doctor_dashboard(request):
     #for three cards
     patientcount=models.Patient.objects.all().filter(status=True,assignedDoctorId=request.user.id).count()
     appointmentcount=models.Appointment.objects.all().filter(status=True,doctorId=request.user.id).count()
