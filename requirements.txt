@@ -12,6 +12,7 @@ django-heroku==0.3.1
 django-on-heroku==1.1.2
 django-registration-redux==2.10
 django-tinymce==3.4.0
+django-utils-six==2.0
 djangorestframework==3.13.1
 dnspython==2.2.1
 email-validator==1.2.1
