@@ -471,7 +471,7 @@ def admin_add_appointment_view(request):
 def admin_approve_appointment_view(request):
     #those whose approval are needed
     appointments=models.Appointment.objects.all().filter(status=False)
-    return render(request,'admin/admin_approve_appointment.html',{'appointments':appointments})
+    return render(request,'admin/approve_appointment.html',{'appointments':appointments})
 
 
 
